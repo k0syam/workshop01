@@ -7,6 +7,7 @@
 
 ## 参加者(本名でなくてOK)
 * k0syam
+* a
 
 ## コード共有に向けた準備
 * [参考記事](https://qiita.com/aipacommander/items/d61d21988a36a4d0e58b)
