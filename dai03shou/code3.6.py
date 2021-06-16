@@ -1,5 +1,5 @@
 N, W = [int(s) for s in input().split()]
-a = [int(input) for i in range(N)]
+a = [int(input()) for i in range(N)]
 
 exist = False
 

@@ -1,6 +1,6 @@
 N, K = [int(s) for s in input().split()]
-a = [int(input) for i in range(N)]
-b = [int(input) for i in range(N)]
+a = [int(input()) for i in range(N)]
+b = [int(input()) for i in range(N)]
 
 min_value = 2000000000
 

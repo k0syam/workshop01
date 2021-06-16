@@ -1,5 +1,5 @@
 N, v = [int(s) for s in input().split()]
-a = [int(input) for i in range(N)]
+a = [int(input()) for i in range(N)]
 
 found_id = -1
 
