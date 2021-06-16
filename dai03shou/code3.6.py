@@ -3,7 +3,7 @@ a = [int(input) for i in range(N)]
 
 exist = False
 
-for bit in range(1 << bin(N)):
+for bit in range(1 << N):
     sum_num = 0
     for i in range(N):
         if bit & (1 << i):
