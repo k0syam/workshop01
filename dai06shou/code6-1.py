@@ -10,6 +10,7 @@ def binary_search(key):
     while left <= right:
         mid=left + (right - left)//2
         #pythonでは mid=(right+left)//2 で問題ないハズ
+        #C++だと型のサイズの関係でエラーとなる可能性があるらしい
         if a[mid] == key:
             return mid
         elif a[mid] > key:
