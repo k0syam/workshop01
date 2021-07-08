@@ -16,6 +16,6 @@ dp[0]=0
 
 for i in range(n+1):
     for j in range(i):
-        chmin(dp,i,dp[j]+c[i][j])
+        chmin(dp,i,dp[j]+c[j][i])
 
 print(dp[n])
