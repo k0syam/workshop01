@@ -20,11 +20,14 @@ def BucketSort(a):
     #ソートしたもの
     a2=[0]*n
     for i in range(n-1,-1,-1):
-        print(n_less[a[i]])
-        a2[n_less[a[i]]]=a[i]#なんかエラー出る
         n_less[a[i]] -= 1
-        
-    a=a2
+        #print(n_less[a[i]])
+        a2[n_less[a[i]]]=a[i]
+    
+    #print(a2)
+    for i in range(n):
+        a[i]=a2[i]
+
 
 if __name__ == '__main__':
 
