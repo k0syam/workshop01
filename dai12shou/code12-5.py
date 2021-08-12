@@ -16,19 +16,24 @@ def BucketSort(a):
     n_less[0]=num[0]#これいらないの？
     for v in range(1,MAX):
         n_less[v]=n_less[v-1] + num[v]
-    
+    print(num[:15])
+    print(n_less[:15])
     #ソートしたもの
     a2=[0]*n
     for i in range(n-1,-1,-1):
-        print(n_less[a[i]])
-        a2[n_less[a[i]]]=a[i]#なんかエラー出る
         n_less[a[i]] -= 1
-        
-    a=a2
+        #print(n_less[a[i]])
+        a2[n_less[a[i]]]=a[i]
+    
+    #print(a2)
+    #a=a2 だとaが更新されない
+    for i in range(n):
+        a[i]=a2[i]
+
 
 if __name__ == '__main__':
 
-    a=[4,1,3,5,2,8,7,12,3,6]
+    a=[4,1,3,5,2,8,7,0,0,12,3,6]
     
     n=len(a)
 
