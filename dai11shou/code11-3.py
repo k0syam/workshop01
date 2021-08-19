@@ -37,7 +37,7 @@ class UnionFind:
     
     #xを含むグループのサイズ
     def size(self,x):
-        return siz[self.root(x)]
+        return self.siz[self.root(x)]
 
 
 if __name__ == '__main__':
