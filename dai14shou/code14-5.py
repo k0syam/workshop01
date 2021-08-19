@@ -35,9 +35,9 @@ if exist_negative_cycle:
     print('Negative cycle!')
 else:
     for i in range(N):
-        print(' ')
         for j in range(N):
             if dp[i][j]<INF/2:
                 print(dp[i][j], end=' ')
             else:
                 print('INF', end=' ')
+        print(' ')
