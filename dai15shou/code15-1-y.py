@@ -60,7 +60,7 @@ edges.sort(key = lambda x: x[0])
 res = 0
 uf = UnionFind(N)
 
-for i in range(N):
+for i in range(len(edges)):
     w = edges[i][0]
     u = edges[i][1][0]
     v = edges[i][1][1]
