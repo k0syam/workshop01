@@ -30,17 +30,16 @@ class FordFulkerson:
         if v == t:
             return f
         self.seen[v] = True
-        for edgelist in Graph.neilist:
-            for e in edgelist:
-                if self.seen[e.nto]:
-                    continue
-                if e.cap == 0:
-                    continue
-                flow = self.fodfs(Graph, e.nto, t, min(f, e.cap))
-                if flow == 0:
-                    continue
-                Graph.run_flow(e, flow)
-                return flow
+        for e in Graph.neilist[v]:
+            if self.seen[e.nto]:
+                continue
+            if e.cap == 0:
+                continue
+            flow = self.fodfs(Graph, e.nto, t, min(f, e.cap))
+            if flow == 0:
+                continue
+            Graph.run_flow(e, flow)
+            return flow
         return 0
     def solve(self, Graph, s, t):
         res = 0
