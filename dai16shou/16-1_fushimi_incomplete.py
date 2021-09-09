@@ -1,14 +1,13 @@
+class Edge:
+    def __init__(self,r,f,t,c):
+        self.rev=r
+        self.fr=f
+        self.to=t
+        self.cap=c
+
 class Graph:
     def __init__(self,n):
         self.li=[[] for _ in range(n)]
-
-    
-    class Edge:
-        def __init__(self,r,f,t,c):
-            self.rev=r
-            self.fr=f
-            self.to=t
-            self.cap=c
     
     #頂点数取得
     def size(self):
@@ -28,8 +27,8 @@ class Graph:
     def addedge(self,fr,to,cap):
         self.fromrev=int(len(self.li[fr]))
         self.torev=int(len(self.li[to]))
-        self.li[fr].append(self.Edge(self.torev,fr,to,cap))
-        self.li[to].append(self.Edge(self.fromrev,to,fr,0))
+        self.li[fr].append(Edge(self.torev,fr,to,cap))
+        self.li[to].append(Edge(self.fromrev,to,fr,0))
 
 class FordFulkerson:
     def __init__(self):
@@ -44,22 +43,22 @@ class FordFulkerson:
             return f
         
         self.seen[v]=True
-        for e in G.li:
+        for e in G.li[v]:
             if self.seen[e.to]:
                 continue
             if e.cap==0:
                 continue
 
             #探す
-            flow=self.fodfs(G,e.to,t,min(f,e.cap))
+            self.flow=self.fodfs(G,e.to,t,min(f,e.cap))
 
-            if flow==0:
+            if self.flow==0:
                 continue
             
             #辺と逆辺の更新
-            G.run_flow(e,flow)
+            G.run_flow(e,self.flow)
 
-            return flow
+            return self.flow
         
         return 0
     
